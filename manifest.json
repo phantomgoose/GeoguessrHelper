@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "GeoguessrHelper",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "earth.png",
+        "default_title": "GeoguessrHelper"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://geoguessr.com/world/play"],
+            "js": ["jquery-3.2.1.min.js", "pin_placer.js", "token_retriever.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["jquery-3.2.1.min.js", "solver.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "tabs",
+        "*://geoguessr.com/"
+    ]
+}
